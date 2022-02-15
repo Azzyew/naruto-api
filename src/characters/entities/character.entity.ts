@@ -1,4 +1,4 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 export type CharacterDocument = Character & Document;
@@ -6,10 +6,13 @@ export type CharacterDocument = Character & Document;
 @Schema()
 export class Character {
   @Prop()
-  fullName: string;
+  id: string;
 
   @Prop()
   name: string;
+
+  @Prop()
+  fullName: string;
 
   @Prop()
   img: string;

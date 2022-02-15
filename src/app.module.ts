@@ -1,15 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CharacterController } from './character/character.controller';
-import { CharacterModule } from './character/character.module';
-import { CharacterService } from './character/character.service';
+import { CharactersModule } from './characters/characters.module';
 require('dotenv').config();
-
 @Module({
-  imports: [MongooseModule.forRoot(process.env.DB_CONNECTION_URI), CharacterModule],
-  controllers: [AppController, CharacterController],
-  providers: [AppService, CharacterService],
+  imports: [MongooseModule.forRoot(process.env.DB_CONNECTION_URI), CharactersModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
