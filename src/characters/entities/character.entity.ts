@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Document } from 'mongoose';
 
 export type CharacterDocument = Character & Document;
@@ -13,15 +13,19 @@ export class Character {
 
   @ApiProperty()
   @Prop()
-  name: string;
-
-  @ApiProperty()
-  @Prop()
   fullName: string;
 
   @ApiProperty()
   @Prop()
+  name: string;
+
+  @ApiProperty()
+  @Prop()
   img: string;
+
+  @ApiPropertyOptional()
+  @Prop()
+  sex?: string;
 }
 
 export const CharacterSchema = SchemaFactory.createForClass(Character);
