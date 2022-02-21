@@ -1,7 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CharactersService } from './characters.service';
-import { Character } from './entities/character.entity';
+import { Character } from './schema/character.schema';
 
 @ApiTags('Characters')
 @Controller('characters')
@@ -10,19 +10,19 @@ export class CharactersController {
 
   @ApiOkResponse({ type: Character, isArray: true })
   @Get()
-  findAll() {
-    return this.charactersService.findAll();
+  getAll() {
+    return this.charactersService.getAll();
   }
 
   @ApiOkResponse({ type: Character, isArray: false })
   @Get('id/:id')
-  findOne(@Param('id') id: string) {
-    return this.charactersService.findOne(id);
+  getOneById(@Param('id') id: string) {
+    return this.charactersService.getOneById(id);
   }
 
   @ApiOkResponse({ type: Character, isArray: true })
   @Get('name/:name')
-  findByName(@Param('name') name: string) {
-    return this.charactersService.findByName(name);
+  getByName(@Param('name') name: string) {
+    return this.charactersService.getByName(name);
   }
 }
