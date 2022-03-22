@@ -6,8 +6,16 @@ import { Character, CharacterSchema } from './schema/character.schema';
 import { CharactersRepository } from './characters.repository';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: Character.name, schema: CharacterSchema, collection: 'characters' }])],
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: Character.name,
+        schema: CharacterSchema,
+        collection: 'characters',
+      },
+    ]),
+  ],
   controllers: [CharactersController],
-  providers: [CharactersService, CharactersRepository]
+  providers: [CharactersService, CharactersRepository],
 })
 export class CharactersModule {}

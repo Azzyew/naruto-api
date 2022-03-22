@@ -32,9 +32,7 @@ export const redocOptions: RedocOptions = {
   tagGroups: [
     {
       name: 'Content',
-      tags: [
-        'Characters',
-      ],
+      tags: ['Characters'],
     },
   ],
 };

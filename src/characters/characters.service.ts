@@ -3,7 +3,6 @@ import { CharactersRepository } from './characters.repository';
 
 @Injectable()
 export class CharactersService {
-
   constructor(private readonly characterRepository: CharactersRepository) {}
 
   getAll() {

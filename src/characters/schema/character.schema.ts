@@ -6,7 +6,6 @@ export type CharacterDocument = Character & Document;
 
 @Schema()
 export class Character {
-
   @ApiProperty()
   @Prop()
   id: string;

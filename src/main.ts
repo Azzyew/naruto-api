@@ -9,9 +9,11 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Naruto API')
-    .setDescription(`Simple Naruto API to get the characters' data. The database was populated by a web scraper. I'll upload more information about the characters but it will take some time so bear with me. I will also make a jutsu collection in the future so stay tuned for that! Link for the GitHub repository: https://github.com/Azzyew/naruto-api`)
+    .setDescription(
+      `Simple Naruto API to get the characters' data. The database was populated by a web scraper. I'll upload more information about the characters but it will take some time so bear with me. I will also make a jutsu collection in the future so stay tuned for that! Link for the GitHub repository: https://github.com/Azzyew/naruto-api`,
+    )
     .setVersion('1.0')
-    .build()
+    .build();
 
   const document = SwaggerModule.createDocument(app, config);
 
